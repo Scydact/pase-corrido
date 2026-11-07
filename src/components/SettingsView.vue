@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { canVibrate, vibrationOn } from '../haptics'
 import { lang, LANG_NAMES, LANGS, t } from '../i18n'
 import { useGame } from '../useGame'
 import ThemeSettings from './ThemeSettings.vue'
@@ -24,6 +25,10 @@ const { settings, rules } = useGame()
         {{ LANG_NAMES[option] }}
       </button>
     </div>
+    <label v-if="canVibrate" class="row vibration">
+      {{ t('settings.vibration') }}
+      <input v-model="vibrationOn" type="checkbox" />
+    </label>
   </section>
 
   <ThemeSettings />
@@ -93,6 +98,16 @@ select {
   background: var(--panel-2);
   border: 1px solid var(--line);
   border-radius: 8px;
+}
+
+.vibration {
+  margin-top: 8px;
+}
+
+input[type='checkbox'] {
+  width: 22px;
+  height: 22px;
+  accent-color: var(--accent);
 }
 
 .note {

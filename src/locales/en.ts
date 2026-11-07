@@ -216,6 +216,8 @@ export const en = {
   'photo.unsure': 'Some tiles are marked to check, so this count may be off.',
   'photo.clear': 'Remove photo',
 
+  'settings.vibration': 'Vibrate on tap',
+  'score.countTitle': 'Pip counter',
   'score.us': 'Us',
   'score.them': 'Them',
   'score.thisHand': 'This hand: {team} +{points}, {label}',

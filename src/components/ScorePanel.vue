@@ -2,6 +2,7 @@
 import { totals, type ScoreLine, type Team } from '../domain/score'
 import { t } from '../i18n'
 import { useGame } from '../useGame'
+import PhotoReader from './PhotoReader.vue'
 
 const { score, hands, currentLines, removeLastHand, resetScore } = useGame()
 
@@ -55,6 +56,13 @@ function reset() {
       <button class="btn" :disabled="hands.length === 0" @click="removeLastHand">{{ t('score.removeLast') }}</button>
       <button class="btn" :disabled="hands.length === 0" @click="reset">{{ t('score.reset') }}</button>
     </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-title">
+      <h2>{{ t('score.countTitle') }}</h2>
+    </div>
+    <PhotoReader label="photo.takeCount" show-total />
   </section>
 </template>
 

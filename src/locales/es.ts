@@ -218,6 +218,8 @@ export const es: Record<MessageKey, string> = {
   'photo.unsure': 'Algunas fichas están marcadas para revisar, así que este conteo puede fallar.',
   'photo.clear': 'Quitar foto',
 
+  'settings.vibration': 'Vibrar al tocar',
+  'score.countTitle': 'Contador de tantos',
   'score.us': 'Nosotros',
   'score.them': 'Ellos',
   'score.thisHand': 'Esta mano: {team} +{points}, {label}',
