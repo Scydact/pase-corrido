@@ -1,6 +1,6 @@
 /** English text. A key ending in @you replaces the base key when the seat is you. */
 export const en = {
-  'app.title': 'Domino Helper',
+  'app.title': 'Pase Corrido',
 
   'nav.table': 'Table',
   'nav.players': 'Players',

@@ -1,4 +1,6 @@
-# Domino Helper
+# Pase Corrido
+
+Try it at https://scydact.github.io/pase-corrido/
 
 A phone-friendly helper for Dominican domino, built with Vue and TypeScript. It opens in Spanish and can switch to
 English under Ajustes (Settings). Enter your tiles and what each player
@@ -32,3 +34,8 @@ While working on the code, `npm run dev` gives live reloading instead, and `npm 
   used. `vendor/opencv/opencv.js` is a small build with just the functions listed in `scripts/opencv_js.config.py`.
   After changing that list, run `npm run build:opencv`, which downloads Emscripten into `.opencv-build/` and takes a few
   minutes. `npm run build` just uses the file already in `vendor/`.
+
+## Licence
+
+MIT, see [LICENSE](LICENSE). `vendor/opencv/opencv.js` is compiled from [OpenCV](https://opencv.org) 4.13.0, which is
+under the Apache License 2.0, see [vendor/opencv/LICENSE](vendor/opencv/LICENSE).

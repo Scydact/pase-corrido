@@ -2,7 +2,7 @@ import type { MessageKey } from './en'
 
 /** Texto en español, con el vocabulario de la mesa dominicana (ver docs/glossary.md). */
 export const es: Record<MessageKey, string> = {
-  'app.title': 'Ayudante de Dominó',
+  'app.title': 'Pase Corrido',
 
   'nav.table': 'Mesa',
   'nav.players': 'Jugadores',
