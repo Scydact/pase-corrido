@@ -1,0 +1,163 @@
+:root {
+  --bg: #12261f;
+  --panel: #1b352c;
+  --panel-2: #24443a;
+  --line: #35594c;
+  --text: #f1f5f0;
+  --muted: #a9bdb3;
+  --accent: #f2c14e;
+  --accent-text: #2a2103;
+  --good: #7fd8a4;
+  --warn: #ffb4a2;
+  --tile: #f6f1e3;
+  --tile-line: #b8ae94;
+  --pip: #1d2522;
+  color-scheme: dark;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.35;
+}
+
+#app {
+  max-width: 560px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  padding: 0 16px calc(84px + env(safe-area-inset-bottom));
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.25rem;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.panel {
+  background: var(--panel);
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 12px;
+}
+
+.panel-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.btn {
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel-2);
+}
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+  font-weight: 600;
+}
+
+.btn-wide {
+  width: 100%;
+}
+
+.btn-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-primary {
+  --action-cut: var(--accent);
+}
+
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.tile-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  min-height: 44px;
+  background: none;
+  border: 2px solid transparent;
+  border-radius: 8px;
+}
+
+.tile-btn.selected {
+  border-color: var(--accent);
+  background: var(--panel-2);
+}
+
+.tile-btn:disabled {
+  opacity: 0.25;
+}
+
+.warn {
+  color: var(--warn);
+}
+
+.good {
+  color: var(--good);
+}
+
+.tag {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-text);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
