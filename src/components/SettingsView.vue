@@ -1,10 +1,19 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { canVibrate, vibrationOn } from '../haptics'
 import { lang, LANG_NAMES, LANGS, t } from '../i18n'
+import { appVersion, canReachServer, offlineReady, repairApp } from '../pwa'
 import { useGame } from '../useGame'
 import ThemeSettings from './ThemeSettings.vue'
 
 const { settings, rules } = useGame()
+
+const repairOffline = ref(false)
+
+async function repair() {
+  repairOffline.value = !(await canReachServer())
+  if (!repairOffline.value) await repairApp()
+}
 </script>
 
 <template>
@@ -73,6 +82,17 @@ const { settings, rules } = useGame()
     </fieldset>
     <p class="muted note">{{ t('settings.rulesNote') }}</p>
   </section>
+
+  <section class="panel">
+    <div class="panel-title">
+      <h2>{{ t('app.about') }}</h2>
+      <span class="muted">{{ t('app.version', { version: appVersion }) }}</span>
+    </div>
+    <p class="muted note first">{{ t(offlineReady ? 'app.offlineReady' : 'app.onlineOnly') }}</p>
+    <button class="btn btn-wide repair" @click="repair">{{ t('app.repair') }}</button>
+    <p class="muted note">{{ t('app.repairNote') }}</p>
+    <p v-if="repairOffline" class="warn note">{{ t('app.repairNeedsInternet') }}</p>
+  </section>
 </template>
 
 <style scoped>
@@ -98,6 +118,14 @@ select {
   background: var(--panel-2);
   border: 1px solid var(--line);
   border-radius: 8px;
+}
+
+.first {
+  margin-top: 0;
+}
+
+.repair {
+  margin-top: 10px;
 }
 
 .vibration {

@@ -1,0 +1,19 @@
+{
+  "id": "./",
+  "name": "Pase Corrido",
+  "short_name": "Pase Corrido",
+  "description": "Ayudante de dominó dominicano: sigue la mano, lee la mesa y encuentra el pase corrido.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#12261f",
+  "theme_color": "#12261f",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -34,6 +34,26 @@ While working on the code, `npm run dev` gives live reloading instead, and `npm 
   used. `vendor/opencv/opencv.js` is a small build with just the functions listed in `scripts/opencv_js.config.py`.
   After changing that list, run `npm run build:opencv`, which downloads Emscripten into `.opencv-build/` and takes a few
   minutes. `npm run build` just uses the file already in `vendor/`.
+- `scripts/make_icons.py` draws the icons into `public/icons`, and needs Pillow. Only rerun it to change the icon.
+
+## Offline and updates
+
+`src/sw/sw.template.js` is the whole policy: online, opening the app gets the latest page; offline or after 3 seconds on a
+slow network, it gets the last complete saved set. It never reloads by itself. Ajustes shows the version and has a repair
+button that clears the saved files without touching games or settings.
+
+If a bad release ever gets stuck on phones, replace the template's contents with this and publish. Every phone then drops
+the offline layer the next time it opens the app online, and the site keeps working:
+
+```js
+self.addEventListener('install', () => self.skipWaiting())
+self.addEventListener('activate', async () => {
+  const names = await caches.keys()
+  // Other projects share this web origin, so only touch this app's caches.
+  await Promise.all(names.filter((name) => name.startsWith('pase-corrido-')).map((name) => caches.delete(name)))
+  await self.registration.unregister()
+})
+```
 
 ## Licence
 

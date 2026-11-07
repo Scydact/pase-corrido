@@ -3,6 +3,13 @@ import type { MessageKey } from './en'
 /** Texto en español, con el vocabulario de la mesa dominicana (ver docs/glossary.md). */
 export const es: Record<MessageKey, string> = {
   'app.title': 'Pase Corrido',
+  'app.about': 'App',
+  'app.version': 'Versión {version}',
+  'app.offlineReady': 'Guardada en este dispositivo, así que abre sin internet.',
+  'app.onlineOnly': 'No está guardada para usar sin internet en esta conexión.',
+  'app.repair': 'Reparar app',
+  'app.repairNote': 'Descarga una copia nueva. Tus juegos y ajustes se quedan.',
+  'app.repairNeedsInternet': 'Esto necesita internet. Intenta de nuevo cuando tengas conexión.',
 
   'nav.table': 'Mesa',
   'nav.players': 'Jugadores',

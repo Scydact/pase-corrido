@@ -1,6 +1,13 @@
 /** English text. A key ending in @you replaces the base key when the seat is you. */
 export const en = {
   'app.title': 'Pase Corrido',
+  'app.about': 'App',
+  'app.version': 'Version {version}',
+  'app.offlineReady': 'Saved on this device, so it opens without internet.',
+  'app.onlineOnly': 'Not saved for offline use on this connection.',
+  'app.repair': 'Repair app',
+  'app.repairNote': 'Downloads a fresh copy. Your games and settings stay.',
+  'app.repairNeedsInternet': 'This needs internet. Try again when you are connected.',
 
   'nav.table': 'Table',
   'nav.players': 'Players',
